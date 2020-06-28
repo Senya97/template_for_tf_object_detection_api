@@ -1,0 +1,7 @@
+.idea
+
+data/
+model_zoo/
+
+*.pytest_cache
+*__pycache__
