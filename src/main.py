@@ -1,5 +1,7 @@
 from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
 
+from utils.dataset_creator_class import DatasetCreator
+
 
 DEFAULT_TEST_SIZE = 0.3
 DEFAULT_AUGMENT_SIZE = 0.6
@@ -29,7 +31,13 @@ def main():
     )
     setup_parser(parser)
     arguments = parser.parse_args()
-    print(arguments)
+    dataset_creator = DatasetCreator(arguments.num_train, arguments.test_size, arguments.aug_size)
+    print('add original images ...')
+    dataset_creator.add_original_images()
+    print('add augmented images ...')
+    dataset_creator.add_augmented_images()
+    print('add generated images ...')
+    dataset_creator.add_generated_images()
 
 
 if __name__ == "__main__":
