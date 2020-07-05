@@ -2,14 +2,14 @@ from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
 
 from utils.dataset_creator_class import DatasetCreator
 
-
+DEFAULT_NUM_TRAIN = 10
 DEFAULT_TEST_SIZE = 0.3
 DEFAULT_AUGMENT_SIZE = 0.6
 
 
 def setup_parser(parser):
     parser.add_argument(
-        '-n', "--num_train", required=True,
+        '-n', "--num_train", default=DEFAULT_NUM_TRAIN,
         help='the total number of images in the training dataset including real, augmented and generated data.',
     )
     parser.add_argument(
