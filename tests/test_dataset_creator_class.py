@@ -8,11 +8,3 @@ def test_add_augmented_images():
 
 def test_add_generated_images():
     assert False
-
-
-def test_load_data():
-    assert False
-
-
-def test_save_data():
-    assert False
